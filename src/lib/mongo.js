@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://username:mongopassword@cluster0.rvuwoml.mongodb.net/?appName=Cluster0",
+      process.env.MONGO_URI,
     );
     console.log("✅ MongoDB Atlas Connected Successfully!");
   } catch (error) {
